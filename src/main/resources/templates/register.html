@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+
+    <form method="post" th:action="@{/register}" th:object="${user}">
+        <input type="text" name="name" placeholder="Name" th:field="*{name}">
+             <p th:if="${#fields.errors('name')}" th:errors="*{name}"></p>
+        <hr>
+        <input type="text" name="family" placeholder="Family" th:field="*{family}">
+             <p th:if="${#fields.errors('family')}" th:errors="*{family}"></p>
+        <hr>
+        <input type="email" name="email" placeholder="Email" th:field="*{email}">
+              <p th:if="${emailStatus == 'duplicate'}">This Email is already exist!</p>
+        <hr>
+        <input type="number" name="phone" placeholder="Phone" th:field="*{phone}">
+              <p th:if="${#fields.errors('phone')}" th:errors="*{phone}"></p>
+        <hr>
+        <input type="password" name="password" placeholder="Pass" th:field="*{password}">
+               <p th:if="${#fields.errors('password')}" th:errors="*{password}"></p>
+        <hr>
+        <button type="submit">Save</button>
+    </form>
+
+</body>
+</html>

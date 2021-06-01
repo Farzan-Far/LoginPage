@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+
+        <div th:if="${#httpSession != null && #httpSession.getAttribute('userEmail') != null}">
+            <a href="/edit">Edit Person</a>
+            <hr>
+            <form method="post" th:action="@{/logout}">
+                <input type="submit" value="Exit">
+            </form>
+        </div>
+
+        <div th:unless="${#httpSession != null && #httpSession.getAttribute('userEmail') != null}">
+            <a href="/login">Login</a>
+            <hr>
+            <a href="/register">Register Person</a>
+        </div>
+
+</body>
+</html>
