@@ -1,3 +1,3 @@
 # LoginPage
-A very simple and useful code for Login Page with SpringBoot 
-in this Project i created a simple Login page with SprinBootfor backend and for front i use html and thymleaf engin 
+A very useful code for Login Page with SpringBoot 
+in this Project I created a simple Login page with SprinBoot for backend and for front I use html and thymleaf engine
